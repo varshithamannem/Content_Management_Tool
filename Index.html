@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Content Management tool</title>
+  <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">Bhanu Chronicles</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#" onclick="showCategory('home')">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" onclick="showCategory('webDeveloper')">Web Developer</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" onclick="showCategory('photography')">Photography</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" onclick="showCategory('travel')">Travel</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-8">
+        <div id="blogContent">
+          <div id="home" class="section">
+            <h2>Welcome to My Blog!</h2>
+            <p>I'm Bhanu, a third-year B.Tech student at Sri Venkateswara Engineering College. As a web developer, I specialize in front-end development, crafting engaging and user-friendly websites. Alongside my coding endeavors, I am an avid photographer, capturing moments that tell captivating stories. I'm also a passionate traveler, exploring new places and immersing myself in different cultures. Join me on this blog as I share my experiences, insights, and tips related to web development, showcase my photography, and take you on virtual journeys to breathtaking destinations. Together, let's embark on a multidimensional exploration of the world of web development, photography, and travel. Get ready for a delightful blend of creativity, technology, and wanderlust.</p>
+          </div>
+          <div id="webDeveloper" class="section">
+            <h2>Web Developer</h2>
+            <p>As a web developer, I possess a strong passion for creating visually appealing and interactive websites. I specialize in front-end development, using HTML, CSS, and JavaScript to bring designs to life. With a keen eye for detail and a focus on user experience, I strive to build intuitive and responsive web applications. I am well-versed in popular frameworks and libraries such as Bootstrap and React, enabling me to develop robust and scalable solutions. Join me as I share insights, tips, and projects related to web development.</p>
+          </div>
+          <div id="photography" class="section">
+            <h2>Photography</h2>
+            <div id="photoGallery" class="gallery">
+              <!-- Add draggable images here -->
+              <img src="path/to/image1.jpg" draggable="true" alt="Image 1">
+              <img src="path/to/image2.jpg" draggable="true" alt="Image 2">
+              <!-- Add more images as needed -->
+            </div>
+            <p>Photography has always been a fascinating art form for me. I love capturing beautiful moments that evoke emotions and tell captivating stories. Through my lens, I explore the world, capturing the beauty of nature, people, and everyday life. Alongside photography, I have honed my video editing skills to create visually stunning multimedia content. Join me as I share my photography journey, techniques, and tips to help you improve your own photography skills.</p>
+          </div>
+          
+          <div id="travel" class="section">
+            <h2>Travel</h2>
+            <div id="travelGallery" class="gallery">
+              <!-- Add draggable videos or other elements here -->
+              <video src="path/to/video1.mp4" draggable="true" controls></video>
+              <video src="path/to/video2.mp4" draggable="true" controls></video>
+              <!-- Add more videos or elements as needed -->
+            </div>
+            <p>Travel content...</p>
+          </div>
+          
+          <!-- Content for other categories will be dynamically loaded here -->
+        </div>
+      </div>
+      
+
+      <div class="col-md-4">
+        <div class="sidebar">
+          <h4>About Me</h4>
+          <p>Hi, my name is <span class="purple">Bhanu Prakash</span> and I am a <span id="element"></span>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-dark text-white py-4">
+    <div class="container">
+      <p>&copy; 2023 My Blog. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdn.interactjs.io/latest/interactjs.min.js"></script>
+
+  <script src="script.js"></script>
+  <script>
+    function showCategory(category) {
+      // Hide all sections
+      const sections = document.querySelectorAll('.section');
+      sections.forEach(section => {
+        section.style.display = 'none';
+      });
+
+      // Show the selected section
+      const selectedSection = document.getElementById(category);
+      if (selectedSection) {
+        selectedSection.style.display = 'block';
+      }
+    }
+  </script>
+</body>
+</html>
